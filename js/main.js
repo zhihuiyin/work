@@ -29,7 +29,7 @@ require.config({
     }
 });
 
-require(['zepto', 'mui', 'text!../tpls/sort/sort.html', 'event'], function($, mui, sortTpl) {
+require(['zepto', 'mui', 'sort/sort', 'salse/salse', 'shopcar/shopcar', 'person/person', 'event'], function($, mui, sort, salse, shopcar, person) {
     mui('body').on('tap', 'a', function() {
         if (window.top.location.hostname == "localhost") {
             window.top.location.href = this.href;
@@ -58,35 +58,24 @@ require(['zepto', 'mui', 'text!../tpls/sort/sort.html', 'event'], function($, mu
     }
 
     $('.gotoPage').on('tap', function(e) {
-        // console.log($(this).attr('data-page'));
-        var name = $(this).attr('data-page');
-        gotoPage(name);
+        var name = $(this).attr('data-page'); //获取元素的data-page属性值
+        switch (name) {
+            case 'sort':
+                sort();
+                break;
+            case 'salse':
+                salse();
+                break;
+            case 'shopcar':
+                shopcar();
+                break;
+            case 'person':
+                person();
+                break;
+        }
+
     })
 
-    function gotoPage(name) {
-        var pageName = name + 'Tpl';
-        $('body').html(eval(pageName));
-    }
-
-    // function gotoPage(name) {
-    //     switch (name) {
-    //         case 'sort':
-    //             $('body').html(sortTpl);
-    //             break;
-    //         case 'sort':
-    //             $('body').html(sortTpl);
-    //             break;
-    //         case 'sort':
-    //             $('body').html(sortTpl);
-    //             break;
-    //         case 'sort':
-    //             $('body').html(sortTpl);
-    //             break;
-    //     }
-    // }
-
-    // console.dir(this);
-    this.gotoPage = gotoPage;
 
     // 提示用户在手机设备上查看
     $(function() {
@@ -102,8 +91,5 @@ require(['zepto', 'mui', 'text!../tpls/sort/sort.html', 'event'], function($, mu
             $('window').width(480);
             $('#modal-box').css('display', 'none');
         })
-
     })
-
-    return gotoPage;
 });

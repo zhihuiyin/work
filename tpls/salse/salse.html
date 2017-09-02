@@ -1,331 +1,257 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
+<style>
+    /* 轮播图样式 */
+    
+    #slider {
+        border-bottom: 1px solid #eee;
+    }
+    
+    #slider .mui-slider-item img {
+        height: 8rem;
+    }
+    /* 清仓商品样式 */
+    
+    #salse {
+        width: 100%;
+    }
+    
+    #salse .title img {
+        width: 100%;
+        margin-top: .5rem;
+    }
+    
+    #salse>ul {
+        background-color: #eee;
+    }
+    
+    #salse>ul>li {
+        margin-bottom: .5rem;
+        background-color: white;
+    }
+    
+    #salse>ul>li>a {
+        display: flex;
+        padding-bottom: 0;
+    }
+    
+    .num {
+        position: absolute;
+        top: .5rem;
+        left: 1rem;
+        background-color: orangered;
+        color: white;
+        opacity: .9;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 4rem;
+        line-height: 4rem;
+        z-index: 1;
+    }
+    
+    .pic {
+        height: 9rem;
+    }
+    
+    .pic img {
+        width: 100%;
+        max-height: 8rem;
+        max-width: 9rem;
+        /* vertical-align: middle; */
+        margin: 1rem auto;
+    }
+    
+    .text {
+        overflow: hidden;
+        text-align: left;
+    }
+    
+    .text h4 {
+        font-weight: normal;
+        line-height: 1.5rem;
+        white-space: normal;
+        font-size: 1rem;
+    }
+    
+    .text p {
+        line-height: 1.6rem;
+    }
+    
+    .text p span {
+        color: #fe316a;
+    }
+    
+    .price {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 1rem;
+    }
+    
+    .price h4 {
+        color: #fe316a;
+    }
+    
+    .price button {
+        background-color: #fe316a;
+        color: white;
+    }
+</style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="black" name="apple-mobile-web-app-status-bar-style">
-    <meta content="telephone=no" name="format-detection">
-    <meta content="email=no" name="format-detection">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>优购商城</title>
-    <link rel="stylesheet" href="../statics/mui/css/mui.min.css">
-    <link rel="stylesheet" href="../statics/mui/css/icons-extra.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/top-bottom.css">
-    <link rel="stylesheet" href="../css/person.css">
-    <script src="../statics/mui/js/mui.min.js"></script>
-    <script src="../statics/zepto/zepto.js"></script>
-    <style>
-        /* 轮播图样式 */
-        
-        #slider {
-            border-bottom: 1px solid #eee;
-        }
-        
-        #slider .mui-slider-item img {
-            height: 8rem;
-        }
-        /* 清仓商品样式 */
-        
-        #salse {
-            width: 100%;
-        }
-        
-        #salse .title img {
-            width: 100%;
-            margin-top: .5rem;
-        }
-        
-        #salse>ul {
-            background-color: #eee;
-        }
-        
-        #salse>ul>li {
-            margin-bottom: .5rem;
-            background-color: white;
-        }
-        
-        #salse>ul>li>a {
-            display: flex;
-            padding-bottom: 0;
-        }
-        
-        .num {
-            position: absolute;
-            top: .5rem;
-            left: 1rem;
-            background-color: orangered;
-            color: white;
-            opacity: .9;
-            width: 4rem;
-            height: 4rem;
-            border-radius: 4rem;
-            line-height: 4rem;
-            z-index: 1;
-        }
-        
-        .pic {
-            height: 9rem;
-        }
-        
-        .pic img {
-            width: 100%;
-            max-height: 8rem;
-            max-width: 9rem;
-            /* vertical-align: middle; */
-            margin: 1rem auto;
-        }
-        
-        .text {
-            overflow: hidden;
-            text-align: left;
-        }
-        
-        .text h4 {
-            font-weight: normal;
-            line-height: 1.5rem;
-            white-space: normal;
-            font-size: 1rem;
-        }
-        
-        .text p {
-            line-height: 1.6rem;
-        }
-        
-        .text p span {
-            color: #fe316a;
-        }
-        
-        .price {
-            position: absolute;
-            right: 1.5rem;
-            bottom: 1rem;
-        }
-        
-        .price h4 {
-            color: #fe316a;
-        }
-        
-        .price button {
-            background-color: #fe316a;
-            color: white;
-        }
-    </style>
-</head>
+<header id="header" class="mui-bar mui-bar-nav">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="../index.html"></a>
+    <h1 class="mui-title">优购商城</h1>
+    <a class="mui-icon mui-icon-home mui-icon-right-nav mui-pull-right"></a>
+</header>
 
-<body>
-    <header id="header" class="mui-bar mui-bar-nav">
-        <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="../index.html"></a>
-        <h1 class="mui-title">优购商城</h1>
-        <a class="mui-icon mui-icon-home mui-icon-right-nav mui-pull-right"></a>
-    </header>
-
-    <div id="slider" class="mui-slider">
-        <div class="mui-slider-group mui-slider-loop">
-            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <a href="#">
-                    <img src="../images/g1.png">
-                </a>
-            </div>
-            <!-- 第一张 -->
-            <div class="mui-slider-item">
-                <a href="#">
-                    <img src="../images/g2.png">
-                </a>
-            </div>
-            <!-- 第二张 -->
-            <div class="mui-slider-item">
-                <a href="#">
-                    <img src="../images/g1.png">
-                </a>
-            </div>
-            <!-- 第三张 -->
-            <div class="mui-slider-item">
-                <a href="#">
-                    <img src="../images/g2.png">
-                </a>
-            </div>
-            <!-- 第四张 -->
-            <div class="mui-slider-item">
-                <a href="#">
-                    <img src="../images/g1.png">
-                </a>
-            </div>
-            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <a href="#">
-                    <img src="../images/g2.png">
-                </a>
-            </div>
+<div id="slider" class="mui-slider">
+    <div class="mui-slider-group mui-slider-loop">
+        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+            <a href="#">
+                <img src="../images/g1.png">
+            </a>
         </div>
-        <div class="mui-slider-indicator">
-            <div class="mui-indicator mui-active"></div>
-            <div class="mui-indicator"></div>
-            <div class="mui-indicator"></div>
-            <div class="mui-indicator"></div>
+        <!-- 第一张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="../images/g2.png">
+            </a>
+        </div>
+        <!-- 第二张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="../images/g1.png">
+            </a>
+        </div>
+        <!-- 第三张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="../images/g2.png">
+            </a>
+        </div>
+        <!-- 第四张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="../images/g1.png">
+            </a>
+        </div>
+        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+            <a href="#">
+                <img src="../images/g2.png">
+            </a>
         </div>
     </div>
-
-    <div id="salse">
-        <div class="title">
-            <img src="../images/qct.png" alt="">
-        </div>
-        <ul class="mui-table-view">
-            <li class="mui-table-view-cell mui-media mui-row">
-                <a href="javascript:;">
-                    <div class="num">
-                        剩9件
-                    </div>
-                    <div class="pic mui-col-xs-4">
-                        <img class="" src="../images/qcp.png">
-                    </div>
-                    <div class="text mui-col-xs-8">
-                        <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
-                        <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
-                        <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
-                        <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
-                    </div>
-                    <div class="price">
-                        <h4>￥229</h4>
-                        <button type="">立即抢购</button>
-                    </div>
-                </a>
-            </li>
-            <li class="mui-table-view-cell mui-media mui-row">
-                <a href="javascript:;">
-                    <div class="num">
-                        剩9件
-                    </div>
-                    <div class="pic mui-col-xs-4">
-                        <img class="" src="../images/qcp.png">
-                    </div>
-                    <div class="text mui-col-xs-8">
-                        <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
-                        <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
-                        <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
-                        <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
-                    </div>
-                    <div class="price">
-                        <h4>￥229</h4>
-                        <button type="">立即抢购</button>
-                    </div>
-                </a>
-            </li>
-            <li class="mui-table-view-cell mui-media mui-row">
-                <a href="javascript:;">
-                    <div class="num">
-                        剩9件
-                    </div>
-                    <div class="pic mui-col-xs-4">
-                        <img class="" src="../images/qcp.png">
-                    </div>
-                    <div class="text mui-col-xs-8">
-                        <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
-                        <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
-                        <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
-                        <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
-                    </div>
-                    <div class="price">
-                        <h4>￥229</h4>
-                        <button type="">立即抢购</button>
-                    </div>
-                </a>
-            </li>
-            <li class="mui-table-view-cell mui-media mui-row">
-                <a href="javascript:;">
-                    <div class="num">
-                        剩9件
-                    </div>
-                    <div class="pic mui-col-xs-4">
-                        <img class="" src="../images/qcp.png">
-                    </div>
-                    <div class="text mui-col-xs-8">
-                        <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
-                        <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
-                        <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
-                        <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
-                    </div>
-                    <div class="price">
-                        <h4>￥229</h4>
-                        <button type="">立即抢购</button>
-                    </div>
-                </a>
-            </li>
-            <li class="mui-table-view-cell mui-media mui-row">
-                <a href="javascript:;">
-                    <div class="num">
-                        剩9件
-                    </div>
-                    <div class="pic mui-col-xs-4">
-                        <img class="" src="../images/qcp.png">
-                    </div>
-                    <div class="text mui-col-xs-8">
-                        <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
-                        <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
-                        <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
-                        <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
-                    </div>
-                    <div class="price">
-                        <h4>￥229</h4>
-                        <button type="">立即抢购</button>
-                    </div>
-                </a>
-            </li>
-        </ul>
+    <div class="mui-slider-indicator">
+        <div class="mui-indicator mui-active"></div>
+        <div class="mui-indicator"></div>
+        <div class="mui-indicator"></div>
+        <div class="mui-indicator"></div>
     </div>
+</div>
 
-
-
-    <nav id="tab-bar" class="mui-bar mui-bar-tab">
-        <a class="mui-tab-item" href="../index.html">
-            <span class="mui-icon mui-icon-home"></span>
-            <span class="mui-tab-label">首页</span>
-        </a>
-        <a class="mui-tab-item" href="./sort.html">
-            <span class="mui-icon-extra mui-icon-extra-class"></span>
-            <span class="mui-tab-label">分类</span>
-        </a>
-        <a class="mui-tab-item mui-active" href="./salse.html">
-            <span class="mui-icon-extra mui-icon-extra-outline"></span>
-            <span class="mui-tab-label">清仓</span>
-        </a>
-        <a class="mui-tab-item" href="./shopcar.html">
-            <span class="mui-icon-extra mui-icon-extra-cart"></span><span class="mui-badge">9</span>
-            <span class="mui-tab-label">购物车</span>
-        </a>
-        <a class="mui-tab-item" href="./person.html">
-            <span class="mui-icon mui-icon-person"></span>
-            <span class="mui-tab-label">我的</span>
-        </a>
-    </nav>
-
-    <script type="text/javascript">
-        mui('body').on('tap', 'a', function() {
-            if (window.top.location.hostname == "localhost") {
-                window.top.location.href = this.href;
-            } else if (window.top.location.hostname = "bluefantast.github.io") {
-                window.top.location.href = this.href;
-            }
-        });
-        mui('body').on('click', 'a', function() {
-            if (window.top.location.hostname == "localhost") {
-                window.top.location.href = this.href;
-
-            } else if (window.top.location.hostname = "bluefantast.github.io") {
-                window.top.location.href = this.href;
-            }
-
-        });
-
-        var gallery = mui('.mui-slider');
-        gallery.slider({
-            interval: 2000 //自动轮播周期，若为0则不自动播放，默认为0；
-        });
-    </script>
-</body>
-
-</html>
+<div id="salse">
+    <div class="title">
+        <img src="../images/qct.png" alt="">
+    </div>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-media mui-row">
+            <a href="javascript:;">
+                <div class="num">
+                    剩9件
+                </div>
+                <div class="pic mui-col-xs-4">
+                    <img class="" src="../images/qcp.png">
+                </div>
+                <div class="text mui-col-xs-8">
+                    <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                    <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
+                    <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
+                    <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
+                </div>
+                <div class="price">
+                    <h4>￥229</h4>
+                    <button type="">立即抢购</button>
+                </div>
+            </a>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-row">
+            <a href="javascript:;">
+                <div class="num">
+                    剩9件
+                </div>
+                <div class="pic mui-col-xs-4">
+                    <img class="" src="../images/qcp.png">
+                </div>
+                <div class="text mui-col-xs-8">
+                    <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                    <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
+                    <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
+                    <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
+                </div>
+                <div class="price">
+                    <h4>￥229</h4>
+                    <button type="">立即抢购</button>
+                </div>
+            </a>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-row">
+            <a href="javascript:;">
+                <div class="num">
+                    剩9件
+                </div>
+                <div class="pic mui-col-xs-4">
+                    <img class="" src="../images/qcp.png">
+                </div>
+                <div class="text mui-col-xs-8">
+                    <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                    <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
+                    <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
+                    <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
+                </div>
+                <div class="price">
+                    <h4>￥229</h4>
+                    <button type="">立即抢购</button>
+                </div>
+            </a>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-row">
+            <a href="javascript:;">
+                <div class="num">
+                    剩9件
+                </div>
+                <div class="pic mui-col-xs-4">
+                    <img class="" src="../images/qcp.png">
+                </div>
+                <div class="text mui-col-xs-8">
+                    <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                    <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
+                    <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
+                    <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
+                </div>
+                <div class="price">
+                    <h4>￥229</h4>
+                    <button type="">立即抢购</button>
+                </div>
+            </a>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-row">
+            <a href="javascript:;">
+                <div class="num">
+                    剩9件
+                </div>
+                <div class="pic mui-col-xs-4">
+                    <img class="" src="../images/qcp.png">
+                </div>
+                <div class="text mui-col-xs-8">
+                    <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                    <p class="mui-ellipsis"><span>*</span>轻薄体验收纳便携</p>
+                    <p class="mui-ellipsis"><span>*</span>萌萌哒的挂件</p>
+                    <p class="mui-ellipsis"><span>*</span>专注每个细节</p>
+                </div>
+                <div class="price">
+                    <h4>￥229</h4>
+                    <button type="">立即抢购</button>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -6,6 +6,16 @@
 @import "base.css";
 @import "top-bottom.css";
 
+/* 页面容器的样式 */
+
+#container {
+    width: 100%;
+    /* height: 100%; */
+    background-color: white;
+    padding-bottom: 5rem;
+}
+
+
 /* 轮播图样式 */
 
 #slider .mui-slider-item img {
