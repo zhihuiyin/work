@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优购商城</title>
+    <link rel="stylesheet" href="../statics/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../statics/mui/css/icons-extra.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/top-bottom.css">
+    <link rel="stylesheet" href="../css/person.css">
+    <script src="../statics/mui/js/mui.min.js"></script>
+    <script src="../statics/zepto/zepto.js"></script>
+    <style>
+        body {
+            padding-top: 44px;
+            background-color: #f0f0f0;
+        }
+        /* 顶部通栏样式 */
+        
+        #header {
+            /* background-color: aliceblue; */
+        }
+    </style>
+    <style>
+        /* 个人中心头部样式 */
+        
+        .vip-header {
+            width: 100%;
+            height: 160px;
+            background: url("../images/vip_bg.jpg") no-repeat center;
+            background-size: 110%;
+            position: relative;
+            margin-bottom: .5rem;
+        }
+        
+        #vip {
+            display: flex;
+            padding: 2rem;
+        }
+        
+        .vip-left {
+            width: 4rem;
+            height: 4rem;
+            border: 2px solid #fff;
+            border-radius: 2rem;
+            background-color: rgba(255, 2555, 255, .3);
+        }
+        
+        .vip-left img {
+            width: 100%;
+        }
+        
+        .vip-right {
+            width: 12rem;
+            height: 4rem;
+            padding: .5rem 0 0 1rem;
+        }
+        
+        .vip-right p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: .1rem;
+        }
+        
+        .user b {
+            background-color: #CDDC39;
+            padding: .2rem .3rem;
+            border-radius: .3rem;
+        }
+        
+        .score {
+            padding-right: 1rem;
+        }
+        
+        .score b {
+            color: orange;
+        }
+        
+        .vip-header ul {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .3);
+            margin: 0;
+            display: flex;
+        }
+        
+        .vip-header ul li {
+            border-right: 1px solid rgba(255, 255, 255, .3);
+            flex: 1;
+        }
+        
+        .vip-header ul li p {
+            color: white;
+        }
+        
+        .vip-header ul li a {
+            color: white;
+        }
+    </style>
+    <style>
+        .list-menu {
+            width: 100%;
+            background-color: white;
+        }
+        
+        .list-menu ul {
+            padding: 0 .5rem;
+            margin: 0;
+        }
+        
+        .list-menu ul li {
+            height: 3rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .list-menu ul li a {
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="mui-bar mui-bar-nav">
+        <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="../index.html"></a>
+        <h1 class="mui-title">个人中心</h1>
+        <a class="mui-icon mui-icon-gear-filled mui-icon-right-nav mui-pull-right"></a>
+    </header>
+
+    <div class="vip-header">
+        <a href="#" id="vip">
+            <div class="vip-left">
+                <img src="../images/vip.png" alt="">
+            </div>
+            <div class="vip-right">
+                <p class="user">
+                    <span>123456789</span>
+                    <b>普通会员</b>
+                </p>
+                <p class="score">
+                    <span>积分 : <b>30</b></span>
+                    <span>红包 : <b>0</b></span>
+                </p>
+            </div>
+        </a>
+        <ul>
+            <li>
+                <a href="#">
+                    <span>1</span>
+                    <p>待付款</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>0</span>
+                    <p>待收货</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>1</span>
+                    <p>待评价</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <style>
+        .order-manage {
+            width: 100%;
+            padding: .5rem;
+            background-color: white;
+            margin-bottom: .5rem;
+        }
+        
+        .myorder {
+            height: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .order-manage ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            margin: 1rem 0 0 0;
+        }
+    </style>
+    <div class="order-manage">
+        <div class="myorder"><span><i class="mui-icon-extra mui-icon-extra-gift"></i>&nbsp;&nbsp;订单管理</span> <a href="#"><i class="mui-icon mui-icon-arrowright"></i></a></div>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="mui-icon mui-icon-locked"></i>
+                    <p>我的订单</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="mui-icon-extra mui-icon-extra-outline"></i>
+                    <p>我的秒杀</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="mui-icon-extra mui-icon-extra-prech"></i>
+                    <p>我的众筹</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="mui-icon-extra mui-icon-extra-hotel"></i>
+                    <p>我的预约</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <style>
+        .account-manage {
+            width: 100%;
+            padding: .5rem;
+            background-color: white;
+            margin-bottom: .5rem;
+        }
+        
+        .myaccount {
+            height: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .account-manage ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            margin: .5rem 0 0 0;
+        }
+        
+        .account-manage ul li a p {
+            margin-top: .2rem;
+        }
+    </style>
+    <div class="account-manage">
+        <div class="myaccount"><span><i class="mui-icon mui-icon-contact"></i>&nbsp;&nbsp;账户管理</span> <a href="#"><i class="mui-icon mui-icon-arrowright"></i></a></div>
+        <ul>
+            <li>
+                <a href="#">
+                    <span>0</span>
+                    <p>账户余额</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>30</span>
+                    <p>我的积分</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>0</span>
+                    <p>我的礼券</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>1</span>
+                    <p>我的收藏</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="list-menu">
+        <ul>
+            <li><a href="#"><span><i class="mui-icon mui-icon-location"></i>&nbsp;&nbsp;收货地址</span> <i class="mui-icon mui-icon-arrowright"></i></a></li>
+            <li><a href="#"><span><i class="mui-icon mui-icon-gear"></i>&nbsp;&nbsp;设置</span> <i class="mui-icon mui-icon-arrowright"></i></a></li>
+            <li><a href="#"><span><i class="mui-icon-extra mui-icon-extra-custom"></i>&nbsp;&nbsp;客服</span> <i class="mui-icon mui-icon-arrowright"></i></a></li>
+            <li><a href="#"><span><i class="mui-icon mui-icon-help"></i>&nbsp;&nbsp;帮助和反馈</span> <i class="mui-icon mui-icon-arrowright"></i></a></li>
+        </ul>
+    </div>
+
+    <nav id="tab-bar" class="mui-bar mui-bar-tab">
+        <a class="mui-tab-item" href="../index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" href="./sort.html">
+            <span class="mui-icon-extra mui-icon-extra-class"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="./salse.html">
+            <span class="mui-icon-extra mui-icon-extra-outline"></span>
+            <span class="mui-tab-label">清仓</span>
+        </a>
+        <a class="mui-tab-item" href="./shopcar.html">
+            <span class="mui-icon-extra mui-icon-extra-cart"></span><span class="mui-badge">9</span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item mui-active" href="./person.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">我的</span>
+        </a>
+    </nav>
+
+    <script type="text/javascript">
+        mui('body').on('tap', 'a', function() {
+            if (window.top.location.hostname == "localhost") {
+                window.top.location.href = this.href;
+            } else if (window.top.location.hostname = "bluefantast.github.io") {
+                window.top.location.href = this.href;
+            }
+        });
+        mui('body').on('click', 'a', function() {
+            if (window.top.location.hostname == "localhost") {
+                window.top.location.href = this.href;
+
+            } else if (window.top.location.hostname = "bluefantast.github.io") {
+                window.top.location.href = this.href;
+            }
+
+        });
+    </script>
+</body>
+
+</html>

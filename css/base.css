@@ -1,0 +1,38 @@
+@charset "utf-8";
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-size: 16px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul>li {
+    border: 0;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+i {
+    color: #007aff;
+}
+
+
+/* 改善a标签点击时背景变灰问题 */
+
+a:hover,
+a:focus,
+a:active,
+a:visited {
+    background-color: white !important;
+}

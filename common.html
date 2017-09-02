@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优购商城</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/top-bottom.css">
+    <style>
+        /* 个人中心头部样式 */
+        
+        .vip-header {
+            width: 100%;
+            height: 180px;
+            background: url("./images/vip_bg.jpg") no-repeat center;
+            background-size: 110%;
+            position: relative;
+        }
+        
+        #vip {
+            display: flex;
+            padding: 2rem;
+        }
+        
+        .vip-left {
+            width: 4rem;
+            height: 4rem;
+            border: 2px solid #fff;
+            border-radius: 2rem;
+            background-color: rgba(255, 2555, 255, .3);
+        }
+        
+        .vip-left img {
+            width: 100%;
+        }
+        
+        .vip-right {
+            width: 12rem;
+            height: 4rem;
+            padding: .5rem 0 0 1rem;
+        }
+        
+        .vip-right p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: .1rem;
+        }
+        
+        .user b {
+            background-color: #CDDC39;
+            padding: .2rem .3rem;
+            border-radius: .3rem;
+        }
+        
+        .score {
+            padding-right: 1rem;
+        }
+        
+        .score b {
+            color: orange;
+        }
+        
+        .vip-header ul {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .3);
+            margin: 0;
+            display: flex;
+        }
+        
+        .vip-header ul li {
+            border-right: 1px solid rgba(255, 255, 255, .3);
+            flex: 1;
+        }
+        
+        .vip-header ul li p {
+            color: white;
+            margin: 0;
+        }
+        
+        .vip-header ul li a {
+            color: white;
+        }
+    </style>
+    <style>
+        /* 购物车列表样式 */
+        
+        #shopcar {
+            width: 100%;
+            background-color: #eee;
+        }
+        
+        #shopcar input::before,
+        #total input::before {
+            color: red;
+            line-height: 2rem;
+        }
+        
+        #shopcar .shops {
+            margin-bottom: .5rem;
+            background-color: white;
+        }
+        
+        #shopcar .mui-table-view:after {
+            height: 0;
+        }
+        
+        #shopcar .shops>ul {
+            /* background-color: #eee;
+            margin-bottom: .5rem; */
+        }
+        
+        #shopcar .shops>ul>li {
+            height: 9rem;
+            background-color: white;
+        }
+        
+        #shopcar .shops>ul>li .good-info {
+            display: flex;
+            padding-bottom: 0;
+        }
+        
+        #shopcar .shops .all-prices {
+            text-align: right;
+            height: 2rem;
+            line-height: 2rem;
+            padding-right: 1rem;
+        }
+        
+        #shopcar .shops .all-prices span {
+            color: red;
+        }
+        
+        .check {
+            padding-top: 3rem;
+        }
+        
+        .pic {
+            height: 9rem;
+        }
+        
+        .pic img {
+            width: 100%;
+            max-height: 8rem;
+            max-width: 8rem;
+            margin: 1.5rem 0 0 -1rem;
+        }
+        
+        .text {
+            overflow: hidden;
+            text-align: left;
+        }
+        
+        .text h4 {
+            font-weight: normal;
+            line-height: 1.3rem;
+            white-space: normal;
+            font-size: .9rem;
+        }
+        
+        .text p {
+            height: 2rem;
+            line-height: 2rem;
+        }
+        
+        .text p span {
+            margin-right: .5rem;
+        }
+        
+        .counts {
+            height: 2rem;
+            line-height: 2rem;
+        }
+        
+        .price {
+            float: left;
+            color: red;
+        }
+        
+        .count {
+            float: right;
+            width: 5rem;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        
+        .count a {
+            display: inline-block;
+            width: 1.5rem;
+            text-align: center;
+        }
+        
+        .count span {
+            width: 1rem;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .count .minus {
+            border-right: 1px solid #eee;
+        }
+        
+        .count .add {
+            border-left: 1px solid #eee;
+        }
+        /* 底部结算样式 */
+        
+        .total {
+            position: fixed;
+            display: flex;
+            z-index: 1;
+            width: 100%;
+            height: 3rem;
+            bottom: 0;
+            line-height: 3rem;
+            background-color: white;
+            border-top: 1px solid #eee;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .total .left {
+            width: 8rem;
+        }
+        
+        .total .middle {
+            width: 10rem;
+        }
+        
+        .total .middle p {
+            width: 6rem;
+            height: 1.2rem;
+            margin: 0;
+            line-height: 1.5rem;
+            color: black;
+        }
+        
+        .right {
+            display: block;
+            width: 5rem;
+            background-color: red;
+            text-align: center;
+            height: 100%;
+        }
+        
+        #right {
+            color: white;
+            background-color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="mui-bar mui-bar-nav">
+        <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="../index.html"></a>
+        <h1 class="mui-title">优购商城</h1>
+        <a class="mui-icon mui-icon-home mui-icon-right-nav mui-pull-right"></a>
+    </header>
+
+    <div class="vip-header">
+        <a href="#" id="vip">
+            <div class="vip-left">
+                <img src="./images/vip.png" alt="">
+            </div>
+            <div class="vip-right">
+                <p class="user">
+                    <span>123456789</span>
+                    <b>普通会员</b>
+                </p>
+                <p class="score">
+                    <span>积分 : <b>30</b></span>
+                    <span>红包 : <b>0</b></span>
+                </p>
+            </div>
+        </a>
+        <ul>
+            <li>
+                <a href="#">
+                    <span>1</span>
+                    <p>待付款</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>0</span>
+                    <p>待收货</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>1</span>
+                    <p>待评价</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <style>
+        .list-menu {
+            width: 100%;
+        }
+        
+        .list-menu ul {
+            padding: 0 .5rem;
+        }
+        
+        .list-menu ul li {
+            height: 3rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .list-menu ul li a {
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+
+
+    <div class="list-menu">
+        <ul>
+            <li><a href="#"><span>收货地址</span> <i class="mui-icon mui-icon-arrowright">></i></a></li>
+            <li><a href="#"><span>设置</span> <i class="mui-icon mui-icon-arrowright">></i></a></li>
+            <li><a href="#"><span>客服</span> <i class="mui-icon mui-icon-arrowright">></i></a></li>
+            <li><a href="#"><span>帮助和反馈</span> <i class="mui-icon mui-icon-arrowright">></i></a></li>
+        </ul>
+    </div>
+
+    <div id="shopcar">
+        <div class="shops">
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>书包专卖店</label>
+                <input name="checkbox" value="all" type="checkbox">
+            </div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media mui-row">
+                    <div class="good-info">
+                        <div class="check mui-col-xs-2">
+                            <div class="mui-checkbox">
+                                <input name="checkbox" value="item0" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="pic mui-col-xs-3">
+                            <img class="" src="./images/qcp.png">
+                        </div>
+                        <div class="text mui-col-xs-7">
+                            <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                            <p class="mui-ellipsis">
+                                <span>重量:3.3kg</span><span>颜色:标配版</span>
+                            </p>
+                            <div class="counts">
+                                <div class="price">
+                                    <b>￥100.00</b>
+                                </div>
+                                <div class="count">
+                                    <a href="#" class="minus">-</a>
+                                    <span class="num">0</span>
+                                    <a href="#" class="add">+</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-row">
+                    <div class="good-info">
+                        <div class="check mui-col-xs-2">
+                            <div class="mui-checkbox">
+                                <input name="checkbox" value="item1" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="pic mui-col-xs-3">
+                            <img class="" src="./images/qcp.png">
+                        </div>
+                        <div class="text mui-col-xs-7">
+                            <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                            <p class="mui-ellipsis">
+                                <span>重量:3.3kg</span><span>颜色:标配版</span>
+                            </p>
+                            <div class="counts">
+                                <div class="price">
+                                    <b>￥100.00</b>
+                                </div>
+                                <div class="count">
+                                    <a href="#" class="minus">-</a>
+                                    <span class="num">0</span>
+                                    <a href="#" class="add">+</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-row">
+                    <div class="good-info">
+                        <div class="check mui-col-xs-2">
+                            <div class="mui-checkbox">
+                                <input name="checkbox" value="item2" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="pic mui-col-xs-3">
+                            <img class="" src="./images/qcp.png">
+                        </div>
+                        <div class="text mui-col-xs-7">
+                            <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                            <p class="mui-ellipsis">
+                                <span>重量:3.3kg</span><span>颜色:标配版</span>
+                            </p>
+                            <div class="counts">
+                                <div class="price">
+                                    <b>￥100.00</b>
+                                </div>
+                                <div class="count">
+                                    <a href="#" class="minus">-</a>
+                                    <span class="num">0</span>
+                                    <a href="#" class="add">+</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="all-prices">
+                本店总计:
+                <span>0.00</span>
+            </div>
+        </div>
+        <div class="shops">
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>书包专卖店深圳分店</label>
+                <input name="checkbox" value="all" type="checkbox">
+            </div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media mui-row">
+                    <div class="good-info">
+                        <div class="check mui-col-xs-2">
+                            <div class="mui-checkbox">
+                                <input name="checkbox" value="item0" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="pic mui-col-xs-3">
+                            <img class="" src="./images/qcp.png">
+                        </div>
+                        <div class="text mui-col-xs-7">
+                            <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                            <p class="mui-ellipsis">
+                                <span>重量:3.3kg</span><span>颜色:标配版</span>
+                            </p>
+                            <div class="counts">
+                                <div class="price">
+                                    <b>￥100.00</b>
+                                </div>
+                                <div class="count">
+                                    <a href="#" class="minus">-</a>
+                                    <span class="num">0</span>
+                                    <a href="#" class="add">+</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-row">
+                    <div class="good-info">
+                        <div class="check mui-col-xs-2">
+                            <div class="mui-checkbox">
+                                <input name="checkbox" value="item1" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="pic mui-col-xs-3">
+                            <img class="" src="./images/qcp.png">
+                        </div>
+                        <div class="text mui-col-xs-7">
+                            <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                            <p class="mui-ellipsis">
+                                <span>重量:3.3kg</span><span>颜色:标配版</span>
+                            </p>
+                            <div class="counts">
+                                <div class="price">
+                                    <b>￥100.00</b>
+                                </div>
+                                <div class="count">
+                                    <a href="#" class="minus">-</a>
+                                    <span class="num">0</span>
+                                    <a href="#" class="add">+</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-row">
+                    <div class="good-info">
+                        <div class="check mui-col-xs-2">
+                            <div class="mui-checkbox">
+                                <input name="checkbox" value="item2" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="pic mui-col-xs-3">
+                            <img class="" src="./images/qcp.png">
+                        </div>
+                        <div class="text mui-col-xs-7">
+                            <h4>好孩子（KAIMEIYUAN)面朝大海系列双肩包55062MINI号</h4>
+                            <p class="mui-ellipsis">
+                                <span>重量:3.3kg</span><span>颜色:标配版</span>
+                            </p>
+                            <div class="counts">
+                                <div class="price">
+                                    <b>￥100.00</b>
+                                </div>
+                                <div class="count">
+                                    <a href="#" class="minus">-</a>
+                                    <span class="num">0</span>
+                                    <a href="#" class="add">+</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="all-prices">
+                本店总计:
+                <span>0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <footer id="total" class="total">
+        <div class="left">
+            <div class="">
+                <label>全选</label>
+                <input name="checkbox" value="allgoods" type="checkbox">
+            </div>
+        </div>
+        <div class="middle">
+            <p><b>总价:</b><span id="middle">0.00</span></p>
+            <p>减免:<s>125.00</s></p>
+        </div>
+        <div class="right">
+            <a id="right" href="#">结算</a>
+        </div>
+    </footer>
+
+    <script>
+    </script>
+</body>
+
+</html>

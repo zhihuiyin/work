@@ -1,0 +1,176 @@
+<!-- <!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优购商城</title>
+    <link rel="stylesheet" href="../statics/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../statics/mui/css/icons-extra.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/top-bottom.css">
+    <link rel="stylesheet" href="../css/person.css">
+    <script src="../statics/mui/js/mui.min.js"></script>
+    <script src="../statics/zepto/zepto.js"></script> -->
+<style>
+    /* 搜索框样式 */
+    
+    #search {
+        padding: 1rem 1rem .4rem;
+        background-color: #edf2f6;
+    }
+    
+    .mui-search input {
+        background-color: white;
+        margin-bottom: .5rem;
+    }
+    /* 全部分类样式 */
+    
+    #sort {
+        width: 100%;
+    }
+    
+    .title img {
+        width: 100%;
+        padding: .5rem 0;
+    }
+    
+    #sort .mui-content>ul {
+        background-color: white;
+        margin-top: 0;
+    }
+    
+    #sort .mui-content>ul>li img {
+        width: 100%;
+    }
+</style>
+<!-- </head> -->
+
+<!-- <body> -->
+<header id="header" class="mui-bar mui-bar-nav">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="./index.html"></a>
+    <h1 class="mui-title">优购商城</h1>
+    <a class="mui-icon-extra mui-icon-extra-sweep mui-icon-right-nav mui-pull-right"></a>
+</header>
+
+<div id="search">
+    <div class="mui-input-row mui-search">
+        <input type="search" class="mui-input-clear" placeholder="搜索商品">
+    </div>
+</div>
+
+<div id="sort">
+    <div class="title">
+        <img src="./images/c.png" alt="">
+    </div>
+    <div class="mui-content">
+        <ul class="mui-table-view mui-grid-view mui-grid-9">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p1.png" alt="">
+                    <div class="mui-media-body">服装饰品</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p2.png" alt="">
+                    <div class="mui-media-body">家居日常</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p3.png" alt="">
+                    <div class="mui-media-body">精品鞋履</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p4.png" alt="">
+                    <div class="mui-media-body">手机数码</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p1.png" alt="">
+                    <div class="mui-media-body">个人护理</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p2.png" alt="">
+                    <div class="mui-media-body">户外运动</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p3.png" alt="">
+                    <div class="mui-media-body">妈咪宝贝</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p4.png" alt="">
+                    <div class="mui-media-body">家用电器</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                <a href="#">
+                    <img src="./images/p1.png" alt="">
+                    <div class="mui-media-body">休闲零食</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<nav id="tab-bar" class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item" href="./index.html">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item mui-active" href="./sort.html">
+        <span class="mui-icon-extra mui-icon-extra-class"></span>
+        <span class="mui-tab-label">分类</span>
+    </a>
+    <a class="mui-tab-item" href="./salse.html">
+        <span class="mui-icon-extra mui-icon-extra-outline"></span>
+        <span class="mui-tab-label">清仓</span>
+    </a>
+    <a class="mui-tab-item" href="./shopcar.html">
+        <span class="mui-icon-extra mui-icon-extra-cart"></span><span class="mui-badge">9</span>
+        <span class="mui-tab-label">购物车</span>
+    </a>
+    <a class="mui-tab-item" href="./person.html">
+        <span class="mui-icon mui-icon-person"></span>
+        <span class="mui-tab-label">我的</span>
+    </a>
+</nav>
+
+<!-- <script type="text/javascript">
+        mui('body').on('tap', 'a', function() {
+            if (window.top.location.hostname == "localhost") {
+                window.top.location.href = this.href;
+            } else if (window.top.location.hostname = "bluefantast.github.io") {
+                window.top.location.href = this.href;
+            }
+        });
+        mui('body').on('click', 'a', function() {
+            if (window.top.location.hostname == "localhost") {
+                window.top.location.href = this.href;
+
+            } else if (window.top.location.hostname = "bluefantast.github.io") {
+                window.top.location.href = this.href;
+            }
+
+        });
+    </script> -->
+
+<!-- </body>
+
+</html> -->

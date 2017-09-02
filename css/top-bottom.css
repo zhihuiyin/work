@@ -1,0 +1,38 @@
+@charset "utf-8";
+body {
+    padding-top: 44px;
+    /* padding-bottom: 5rem; */
+}
+
+
+/* 顶部通栏样式 */
+
+#header {
+    background-color: white;
+}
+
+#header .mui-icon-extra {
+    margin: 10px 0 0 0;
+}
+
+
+/* 底部分栏样式 */
+
+#tab-bar .mui-icon-extra {
+    font-size: 1.25rem;
+    position: relative;
+    top: 4px;
+}
+
+#tab-bar .mui-tab-label {
+    font-size: .75rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#module-container {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10rem;
+}
