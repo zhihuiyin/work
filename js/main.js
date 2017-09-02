@@ -29,7 +29,7 @@ require.config({
     }
 });
 
-require(['zepto', 'mui', 'sort/sort', 'salse/salse', 'shopcar/shopcar', 'person/person', 'event'], function($, mui, sort, salse, shopcar, person) {
+require(['zepto', 'mui', 'home/home', 'sort/sort', 'salse/salse', 'shopcar/shopcar', 'person/person', 'event'], function($, mui, home, sort, salse, shopcar, person) {
     mui('body').on('tap', 'a', function() {
         if (window.top.location.hostname == "localhost") {
             window.top.location.href = this.href;
@@ -60,6 +60,9 @@ require(['zepto', 'mui', 'sort/sort', 'salse/salse', 'shopcar/shopcar', 'person/
     $('.gotoPage').on('tap', function(e) {
         var name = $(this).attr('data-page'); //获取元素的data-page属性值
         switch (name) {
+            case 'home':
+                home();
+                break;
             case 'sort':
                 sort();
                 break;
