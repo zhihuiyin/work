@@ -36,5 +36,5 @@ a:hover,
 a:focus,
 a:active,
 a:visited {
-    background-color: white !important;
+    /* background-color: white !important; */
 }
