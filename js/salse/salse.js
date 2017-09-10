@@ -17,7 +17,9 @@ define([
         });
 
         $('.getDetails').on('tap', function(e) {
+            e.preventDefault();
             details();
+            return false;
         });
     }
 
