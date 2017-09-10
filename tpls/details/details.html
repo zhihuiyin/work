@@ -1,0 +1,796 @@
+<style>
+    body {
+        background-color: white;
+    }
+    /* 轮播图样式 */
+    
+    #slider {
+        border-bottom: 2px solid #eee;
+    }
+    
+    #slider .mui-slider-item img {
+        height: 25rem;
+    }
+    /* 清仓商品样式 */
+    
+    #details {
+        width: 100%;
+    }
+</style>
+
+<header id="header" class="mui-bar mui-bar-nav">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="./index.html"></a>
+    <h1 class="mui-title">优购商城-商品详情</h1>
+    <a class="mui-icon mui-icon-home mui-icon-right-nav mui-pull-right"></a>
+</header>
+
+<div id="slider" class="mui-slider">
+    <div class="mui-slider-group mui-slider-loop">
+        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+            <a href="#">
+                <img src="./images/goods6.jpg">
+            </a>
+        </div>
+        <!-- 第一张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="./images/goods1.jpg">
+            </a>
+        </div>
+        <!-- 第二张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="./images/goods2.jpg">
+            </a>
+        </div>
+        <!-- 第三张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="./images/goods3.jpg">
+            </a>
+        </div>
+        <!-- 第四张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="./images/goods4.jpg">
+            </a>
+        </div>
+        <!-- 第五张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="./images/goods5.jpg">
+            </a>
+        </div>
+        <!-- 第六张 -->
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="./images/goods6.jpg">
+            </a>
+        </div>
+        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+            <a href="#">
+                <img src="./images/goods1.jpg">
+            </a>
+        </div>
+    </div>
+    <div class="mui-slider-indicator">
+        <div class="mui-indicator mui-active"></div>
+        <div class="mui-indicator"></div>
+        <div class="mui-indicator"></div>
+        <div class="mui-indicator"></div>
+        <div class="mui-indicator"></div>
+        <div class="mui-indicator"></div>
+    </div>
+</div>
+<style>
+    #details {
+        width: 100%;
+    }
+    
+    .discribe {
+        width: 100%;
+        border-bottom: .5rem solid #eee;
+        padding: .5rem;
+    }
+    
+    .discribe h4 {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+    }
+    
+    .discribebody {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+    }
+    
+    .price {
+        color: red;
+        font-size: 1.5rem;
+        line-height: 3rem;
+    }
+    
+    .collect {
+        margin: 0 0rem 0 12rem;
+        padding: 0 1rem;
+        border-left: 1px solid #ccc;
+        font-size: .9rem;
+        text-align: center;
+        color: #333;
+    }
+    
+    .choose {
+        border-bottom: .5rem solid #eee;
+        padding: 1.5rem .5rem 1rem;
+        color: gray;
+    }
+    
+    .color {
+        margin: 0 0 1.5rem 0;
+    }
+    
+    .color span {
+        padding: .5rem;
+        color: black;
+        border: 1px solid #ccc;
+        margin-right: .5rem;
+    }
+    
+    .color span.active {
+        margin-left: .5rem;
+        color: red;
+        border: 1px solid red;
+    }
+    
+    .mui-numbox {
+        color: black;
+    }
+    
+    .address {
+        padding: 1rem .5rem .5rem;
+        border-bottom: .5rem solid #eee;
+    }
+    
+    .address p span {
+        color: black;
+        margin: 0 0 0 1rem;
+        letter-spacing: .1rem;
+    }
+    
+    .store {
+        padding: .5rem;
+        border-bottom: .5rem solid #eee;
+    }
+    
+    .storeinfo {
+        height: 2rem;
+    }
+    
+    .shopdata,
+    .shopcollect {
+        display: flex;
+        padding: .5rem 0 0;
+    }
+    
+    .shoppic {
+        height: 2rem;
+        width: 2rem;
+        float: left;
+    }
+    
+    .shoppic img {
+        height: 100%;
+    }
+    
+    .shopname {
+        height: 2rem;
+        margin: 0 0 0 1rem;
+        padding: .5rem 0 0 1.5rem;
+    }
+    
+    .shopdata p {
+        text-align: center;
+        padding: 0rem 4rem;
+        margin: 0;
+        color: black;
+    }
+    
+    .shopdata p small {
+        color: gray;
+    }
+    
+    .shopdata p:first-of-type {
+        border-right: 1px solid #eee;
+    }
+    
+    .shopcollect p {
+        border: 1px solid #eee;
+        padding: .5rem 3rem;
+        color: black;
+    }
+    
+    .shopcollect p:first-of-type {
+        margin-right: 1rem;
+    }
+</style>
+<div id="details">
+    <div class="discribe">
+        <h4>【优购商城】爱华仕（OIWAS）双肩包 休闲商务背包笔记本电脑包14英寸男女书包 4082黑色</h4>
+        <div class="discribebody">
+            <p class="price">
+                ￥229.00
+            </p>
+            <p class="collect">
+                <span>☆</span>
+                <br>
+                <span>收藏</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="choose">
+        <div class="color">
+            颜色 &nbsp;<span class="active">黑色爆款</span> <span>红色</span> <span>军绿色</span>
+        </div>
+        <div class="count">
+            数量 &nbsp;
+            <div class="mui-numbox">
+                <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                <input class="mui-input-numbox" type="number" value="1">
+                <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="address">
+        <p>送至 <span>广东省深圳市南山区</span> </p>
+        <p>
+            重量 <span>1kg</span>
+        </p>
+    </div>
+
+    <div class="store">
+        <div class="storeinfo">
+            <div class="shoppic"><img src="./images/vip.png" alt=""></div>
+            <div class="shopname">海绵包包旗舰店</div>
+        </div>
+        <div class="shopdata">
+            <P>
+                <span>10000</span>
+                <br>
+                <small>粉丝人数</small>
+            </P>
+            <P>
+                <span>100</span>
+                <br>
+                <small>全部商品</small>
+            </P>
+        </div>
+        <div class="shopcollect">
+            <p>
+                ☆ 收藏店铺
+            </p>
+            <p>
+                ★ 进入店铺
+            </p>
+        </div>
+    </div>
+    <style>
+        .comment {
+            border-bottom: .5rem solid #eee;
+        }
+        
+        .comment-head {
+            padding: 1rem;
+            color: black;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comment-head span:first-of-type {
+            margin: 0 0 0 1rem;
+            color: red;
+            font-size: .9rem;
+        }
+        
+        .comment-head span:last-of-type {
+            margin: 0 0 0 6rem;
+            font-size: .9rem;
+        }
+        
+        .items {
+            padding: 0 .5rem;
+        }
+        
+        .comment-item {
+            padding: .5rem 0 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .user .name {
+            display: inline-block;
+            width: 4rem;
+        }
+        
+        .user b {
+            color: orange;
+            /* margin-left: .5rem; */
+        }
+        
+        .user .date {
+            margin: 0 0 0 9rem;
+        }
+        
+        .content {
+            color: black;
+            padding-right: .5rem;
+            letter-spacing: .1rem;
+        }
+        
+        .imgs img {
+            width: 5rem;
+            border: 1px solid #eee;
+        }
+        
+        .type {
+            letter-spacing: .1rem;
+            margin-left: .5rem;
+        }
+        
+        .reply {
+            margin: 0 0 0 12rem;
+            color: royalblue;
+        }
+        
+        .all-comment input {
+            width: 100%;
+            height: 3rem;
+        }
+    </style>
+    <div class="comment">
+        <div class="comment-head">
+            评价 <span>好评96.1%</span>
+            <span>共 4万+ 条评价 &nbsp;</span>>
+        </div>
+        <div class="items">
+            <div class="comment-item">
+                <p class="user">
+                    <span class="name">比尔盖茨</span> <b>★★★★★</b> <span class="date">2017-08-29</span>
+
+                </p>
+                <p class="content">
+                    昨天下单,今天就收到了,服务很好,宝贝不错,很喜欢,下次还会光顾
+                </p>
+                <p class="imgs">
+                    <img src="./images/goods1.jpg" alt="">
+                    <img src="./images/goods2.jpg" alt="">
+                    <img src="./images/goods3.jpg" alt="">
+                </p>
+                <p class="sort">
+                    颜色 : <span class="type">黑色爆款</span> <span class="reply"><i>2</i> 回复</span>
+                </p>
+            </div>
+            <div class="comment-item">
+                <p class="user">
+                    <span class="name">特朗普</span> <b>★★★★★</b> <span class="date">2017-08-29</span>
+
+                </p>
+                <p class="content">
+                    昨天下单,今天就收到了,服务很好,宝贝不错,很喜欢,下次还会光顾
+                </p>
+                <p class="imgs">
+                    <img src="./images/goods1.jpg" alt="">
+                    <img src="./images/goods2.jpg" alt="">
+                    <img src="./images/goods3.jpg" alt="">
+                </p>
+                <p class="sort">
+                    颜色 : <span class="type">黑色爆款</span> <span class="reply"><i>2</i> 回复</span>
+                </p>
+            </div>
+            <div class="comment-item">
+                <p class="user">
+                    <span class="name">奥巴马</span> <b>★★★★★</b> <span class="date">2017-08-29</span>
+
+                </p>
+                <p class="content">
+                    昨天下单,今天就收到了,服务很好,宝贝不错,很喜欢,下次还会光顾
+                </p>
+                <p class="imgs">
+                    <img src="./images/goods1.jpg" alt="">
+                    <img src="./images/goods2.jpg" alt="">
+                    <img src="./images/goods3.jpg" alt="">
+                </p>
+                <p class="sort">
+                    颜色 : <span class="type">黑色爆款</span> <span class="reply"><i>2</i> 回复</span>
+                </p>
+            </div>
+        </div>
+        <div class="all-comment">
+            <input type="button" value="查看全部评价">
+        </div>
+    </div>
+    <!-- 商品详细信息 -->
+    <style>
+        .goodsinfo {
+            min-height: 10rem;
+        }
+        
+        .goodsinfo .mui-content {
+            background-color: white;
+        }
+        
+        div#segmentedControl {
+            border-bottom: 1px solid #eee;
+        }
+        
+        #segmentedControl .bdright {
+            border-right: 1px solid #eee;
+        }
+        
+        #item1 {
+            font-size: .8rem;
+            margin: 0 0 5rem 0;
+        }
+        
+        #item1>ul>li>img {
+            width: 100%;
+        }
+        
+        div#item2 {
+            padding: 8px 12px;
+            font-size: .8rem;
+            margin: 0 0 5rem 0;
+        }
+        
+        .itemtitle {
+            display: flex;
+            justify-content: space-between;
+            padding: .5rem 0;
+            line-height: 1rem;
+        }
+        
+        .itemtitle span {
+            display: inline-block;
+            width: 8rem;
+        }
+        
+        .itemtitle span hr {
+            border: 1px solid #eee;
+        }
+        
+        .listcontent {
+            height: 2rem;
+            line-height: 2rem;
+        }
+        
+        table.arguments {
+            width: 100%;
+        }
+        
+        .arguments tr {
+            border: 1px solid #eee;
+            text-align: left;
+        }
+        
+        .arguments th {
+            padding: .5rem .5rem;
+        }
+        
+        .arguments td:first-of-type {
+            width: 7rem;
+            border-right: 1px solid #eee;
+        }
+        
+        .arguments td {
+            padding: .5rem .5rem;
+        }
+        
+        div#item3 {
+            padding: 1rem;
+            font-size: .8rem;
+            margin: 0 0 5rem 0;
+        }
+    </style>
+    <div class="goodsinfo">
+        <div class="mui-content">
+            <div>
+                <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative">
+                    <a class="mui-control-item mui-active bdright" href="#item1">
+				商品简介
+			</a>
+                    <a class="mui-control-item bdright" href="#item2">
+				规格参数
+			</a>
+                    <a class="mui-control-item" href="#item3">
+				售后保障
+			</a>
+                </div>
+            </div>
+            <div>
+                <div id="item1" class="mui-control-content mui-active">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details1.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details2.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details3.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details4.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details5.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details6.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details7.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details8.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details9.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details10.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details11.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details12.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details13.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details14.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details15.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details16.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details17.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details18.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details19.jpg" alt="">
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <img src="./images/details20.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <div id="item2" class="mui-control-content">
+                    <!-- 规格参数 -->
+                    <div class="list">
+                        <div class="itemtitle">
+                            <span><hr></span> 包装清单
+                            <span><hr></span>
+                        </div>
+                        <div class="listcontent">
+                            背包 X 1 吊牌 X 1 包装袋 X 1
+                        </div>
+                    </div>
+                    <div class="goodargu">
+                        <div class="itemtitle">
+                            <span><hr></span> 商品参数
+                            <span><hr></span>
+                        </div>
+                        <table class="arguments">
+                            <tr>
+                                <td>
+                                    商品编号
+                                </td>
+                                <td>
+                                    765798
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>主体</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    品牌名称
+                                </td>
+                                <td>
+                                    爱华仕
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    产品型号
+                                </td>
+                                <td>
+                                    4082
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    产品类别
+                                </td>
+                                <td>
+                                    双肩电脑包
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    产品颜色
+                                </td>
+                                <td>
+                                    黑色
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    外部材质
+                                </td>
+                                <td>
+                                    尼龙
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    内里材质
+                                </td>
+                                <td>
+                                    其他
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>规格参数</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    容纳电脑尺寸
+                                </td>
+                                <td>
+                                    14.1-15英寸
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    外部尺寸(长宽高mm)
+                                </td>
+                                <td>
+                                    33*13*50
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    隔层尺寸(长宽高mm)
+                                </td>
+                                <td>
+                                    无
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    产品重量(kg)
+                                </td>
+                                <td>
+                                    约0.74
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>特性</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    闭合方式
+                                </td>
+                                <td>
+                                    拉链
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    内部结构
+                                </td>
+                                <td>
+                                    拉链暗袋
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    防水强度
+                                </td>
+                                <td>
+                                    防泼水
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    防雨罩
+                                </td>
+                                <td>
+                                    无
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    背负系统
+                                </td>
+                                <td>
+                                    无
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    电源位
+                                </td>
+                                <td>
+                                    无
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    耳机孔
+                                </td>
+                                <td>
+                                    无
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="item3" class="mui-control-content">
+                    <!-- 售后保障 -->
+                    <div class="quality">本产品全国联保，享受三包服务，质保期为：一年质保</div>
+                    <div class="Promise">
+                        <div class="itemtitle">
+                            <span><hr></span> 服务承诺
+                            <span><hr></span>
+                        </div>
+                        <div class="content">
+                            1、优购价：优购价为商品的销售价，是您最终决定是否购买商品的依据。<br>2、划线价：商品展示的划横线价格为参考价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在优购平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。<br>3、折扣：如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。<br>4、异常问题：商品促销信息以商品详情页“促销”栏中的信息为准；商品的具体售价以订单结算页价格为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系销售商咨询。<br>
+                        </div>
+                    </div>
+                    <div class="statement">
+                        <div class="itemtitle">
+                            <span><hr></span> 价格说明
+                            <span><hr></span>
+                        </div>
+                        <div class="content">
+                            1、优购价：优购价为商品的销售价，是您最终决定是否购买商品的依据。<br>2、划线价：商品展示的划横线价格为参考价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在优购平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。<br>3、折扣：如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。<br>4、异常问题：商品促销信息以商品详情页“促销”栏中的信息为准；商品的具体售价以订单结算页价格为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系销售商咨询。<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        mui.init({
+            swipeBack: true //启用右滑关闭功能
+        });
+        (function($) {
+            $('#scroll').scroll({
+                indicators: true //是否显示滚动条
+            });
+            var segmentedControl = document.getElementById('segmentedControl');
+            $('.mui-input-group').on('change', 'input', function() {
+                if (this.checked) {
+                    var styleEl = document.querySelector('input[name="style"]:checked');
+                    var colorEl = document.querySelector('input[name="color"]:checked');
+                    if (styleEl && colorEl) {
+                        var style = styleEl.value;
+                        var color = colorEl.value;
+                        segmentedControl.className = 'mui-segmented-control' + (style ? (' mui-segmented-control-' + style) : '') + ' mui-segmented-control-' + color;
+                    }
+                }
+            });
+        })(mui);
+    </script> -->
+</div>
