@@ -17,13 +17,13 @@
         width: 100%;
     }
 </style>
-
+<!-- 顶部导航 -->
 <header id="header" class="mui-bar mui-bar-nav">
     <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="./index.html"></a>
     <h1 class="mui-title">优购商城-商品详情</h1>
     <a class="mui-icon mui-icon-home mui-icon-right-nav mui-pull-right"></a>
 </header>
-
+<!-- 轮播图 -->
 <div id="slider" class="mui-slider">
     <div class="mui-slider-group mui-slider-loop">
         <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
@@ -105,6 +105,7 @@
         width: 100%;
         height: 3rem;
         display: flex;
+        justify-content: space-between;
     }
     
     .price {
@@ -114,18 +115,20 @@
     }
     
     .collect {
-        margin: 0 0rem 0 12rem;
+        float: right;
         padding: 0 1rem;
         border-left: 1px solid #ccc;
         font-size: .9rem;
         text-align: center;
         color: #333;
+        width: 5rem;
     }
     
     .choose {
         border-bottom: .5rem solid #eee;
         padding: 1.5rem .5rem 1rem;
         color: gray;
+        font-size: .9rem;
     }
     
     .color {
@@ -173,6 +176,7 @@
     .shopcollect {
         display: flex;
         padding: .5rem 0 0;
+        justify-content: space-between;
     }
     
     .shoppic {
@@ -199,7 +203,9 @@
     }
     
     .shopdata p small {
+        display: inline-block;
         color: gray;
+        width: 3rem;
     }
     
     .shopdata p:first-of-type {
@@ -207,8 +213,10 @@
     }
     
     .shopcollect p {
+        width: 11rem;
+        text-align: center;
         border: 1px solid #eee;
-        padding: .5rem 3rem;
+        padding: .5rem 2rem;
         color: black;
     }
     
@@ -216,7 +224,9 @@
         margin-right: 1rem;
     }
 </style>
+<!-- 详情介绍 -->
 <div id="details">
+    <!-- 商品描述 -->
     <div class="discribe">
         <h4>【优购商城】爱华仕（OIWAS）双肩包 休闲商务背包笔记本电脑包14英寸男女书包 4082黑色</h4>
         <div class="discribebody">
@@ -230,7 +240,7 @@
             </p>
         </div>
     </div>
-
+    <!-- 选购数量 -->
     <div class="choose">
         <div class="color">
             颜色 &nbsp;<span class="active">黑色爆款</span> <span>红色</span> <span>军绿色</span>
@@ -244,14 +254,14 @@
             </div>
         </div>
     </div>
-
+    <!-- 收货地址 -->
     <div class="address">
         <p>送至 <span>广东省深圳市南山区</span> </p>
         <p>
             重量 <span>1kg</span>
         </p>
     </div>
-
+    <!-- 店铺信息 -->
     <div class="store">
         <div class="storeinfo">
             <div class="shoppic"><img src="./images/vip.png" alt=""></div>
@@ -284,19 +294,25 @@
         }
         
         .comment-head {
+            display: flex;
+            justify-content: space-between;
             padding: 1rem;
             color: black;
             border-bottom: 1px solid #eee;
         }
         
         .comment-head span:first-of-type {
-            margin: 0 0 0 1rem;
+            display: inline-block;
+            width: 5rem;
+            margin: 0 0 0 -5rem;
             color: red;
             font-size: .9rem;
         }
         
         .comment-head span:last-of-type {
-            margin: 0 0 0 6rem;
+            display: inline-block;
+            width: 7rem;
+            margin: 0 -6rem 0 0;
             font-size: .9rem;
         }
         
@@ -309,6 +325,11 @@
             border-bottom: 1px solid #eee;
         }
         
+        p.user {
+            display: flex;
+            justify-content: space-between;
+        }
+        
         .user .name {
             display: inline-block;
             width: 4rem;
@@ -316,11 +337,12 @@
         
         .user b {
             color: orange;
-            /* margin-left: .5rem; */
+            margin-left: -10rem;
         }
         
         .user .date {
-            margin: 0 0 0 9rem;
+            margin: 0 0.5rem 0 0;
+            display: inline-block;
         }
         
         .content {
@@ -349,6 +371,7 @@
             height: 3rem;
         }
     </style>
+    <!-- 评论信息 -->
     <div class="comment">
         <div class="comment-head">
             评价 <span>好评96.1%</span>
@@ -771,26 +794,55 @@
             </div>
         </div>
     </div>
-    <!-- <script>
-        mui.init({
-            swipeBack: true //启用右滑关闭功能
-        });
-        (function($) {
-            $('#scroll').scroll({
-                indicators: true //是否显示滚动条
-            });
-            var segmentedControl = document.getElementById('segmentedControl');
-            $('.mui-input-group').on('change', 'input', function() {
-                if (this.checked) {
-                    var styleEl = document.querySelector('input[name="style"]:checked');
-                    var colorEl = document.querySelector('input[name="color"]:checked');
-                    if (styleEl && colorEl) {
-                        var style = styleEl.value;
-                        var color = colorEl.value;
-                        segmentedControl.className = 'mui-segmented-control' + (style ? (' mui-segmented-control-' + style) : '') + ' mui-segmented-control-' + color;
-                    }
-                }
-            });
-        })(mui);
-    </script> -->
+</div>
+<!-- 下单购买 -->
+<style>
+    div#buy {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        height: 3rem;
+        width: 100%;
+        z-index: 100;
+        bottom: 0;
+        border-top: 1px solid #eee;
+        background-color: white;
+    }
+    
+    .shopcart {
+        width: 5rem;
+        text-align: center;
+        font-size: .8rem;
+    }
+    
+    .addcart {
+        width: 8rem;
+        margin: 0 -2.4rem 0 0;
+        padding: 0.9rem;
+        text-align: center;
+        background-color: darkorange;
+        color: white;
+        font-size: .9rem;
+    }
+    
+    .buynow {
+        width: 8rem;
+        padding: 0.9rem;
+        text-align: center;
+        background-color: red;
+        color: white;
+        font-size: .9rem;
+    }
+</style>
+<div id="buy">
+    <div class="shopcart">
+        <i></i>
+        <br> 购物车
+    </div>
+    <div class="addcart">
+        加入购物车
+    </div>
+    <div class="buynow">
+        立即购买
+    </div>
 </div>
