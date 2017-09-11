@@ -97,7 +97,7 @@ require(['zepto', 'mui', 'home/home', 'sort/sort', 'salse/salse', 'shopcar/shopc
     })
 
     // 阻止a标签的默认事件
-    $('body').find('a').click(function(e) {
+    $('body').find('a').on('tap', (function(e) {
         //如果提供了事件对象，则这是一个非IE浏览器 
         if (e && e.preventDefault) {
             //阻止默认浏览器动作(W3C) 
@@ -107,5 +107,5 @@ require(['zepto', 'mui', 'home/home', 'sort/sort', 'salse/salse', 'shopcar/shopc
             window.event.returnValue = false;
             return false;
         }
-    });
+    }));
 });
