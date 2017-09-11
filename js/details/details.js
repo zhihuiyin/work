@@ -14,5 +14,10 @@ define([
         gallery.slider({
             interval: 2000
         });
+
+        $('#segmentedControl').find('a').on('tap', function(e) {
+            e.preventDefault();
+
+        });
     }
 });
