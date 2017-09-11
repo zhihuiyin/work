@@ -17,9 +17,15 @@ define([
         });
 
         $('.getDetails').on('tap', function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             details();
-            return false;
+            // return false;
+            if (e && e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                window.event.cancelBubble = true;
+                return false;
+            }
         });
     }
 
